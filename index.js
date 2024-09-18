@@ -6,11 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // middleware
-app.use(cors({
-    origin: 'https://coffee-crud-b77ca.firebaseapp.com', // Replace with your frontend domain
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-    credentials: true // Enable if your requests need to send cookies or authentication
-}));
+app.use(cors());
 app.use(express.json());
 console.log(process.env.DB_PASS);
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.bmd33.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
